@@ -69,9 +69,11 @@ export function gradeQuestion(index, value) {
 }
 
 export function resultForScore(score) {
-  if (score === 5) return { title: '서울대 상위 10%', comment: '이 정도면 찍은 것도 실력입니다.', stamp: '수' };
-  if (score === 4) return { title: '서울대생 평균', comment: '한 문제는 인간미로 남겨 두었습니다.', stamp: '우' };
-  if (score >= 2) return { title: '서울대 하위 10%', comment: '잠깐, 이건 제 전공이 아닌데요.', stamp: '미' };
+  if (score === 5) return { title: '서울대 상위 1%', comment: '이 정도면 찍은 것도 실력입니다.', stamp: '수' };
+  if (score === 4) return { title: '서울대 상위 25%', comment: '한 문제는 인간미로 남겨 두었습니다.', stamp: '우' };
+  if (score === 3) return { title: '서울대 평균', comment: '잠깐, 이건 제 전공이 아닌데요.', stamp: '미' };
+  if (score === 2) return { title: '서울대 하위 10%', comment: '잠깐, 이건 제 전공이 아닌데요.', stamp: '미' };
+  if (score === 1) return { title: '서울대 하위 1%', comment: '오늘 컨디션이 조금… 그랬던 걸로 합시다.', stamp: '음?' };
   return { title: '서울대...?', comment: '오늘 컨디션이 조금… 그랬던 걸로 합시다.', stamp: '음?' };
 }
 

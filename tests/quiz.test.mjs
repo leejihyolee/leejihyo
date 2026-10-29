@@ -26,10 +26,10 @@ test('submitted choices are locked and double submission cannot alter a result',
 test('complete five-question run reaches result and grades 5/5',()=>{
   let s={...createState(),view:'quiz'};
   for(let i=0;i<5;i++){s=submitAnswer(s,i===2?'남극 대륙':QUESTIONS[i].correct);s=advanceQuestion(s);}
-  assert.equal(s.view,'result');assert.equal(scoreState(s),5);assert.equal(resultForScore(scoreState(s)).title,'서울대 상위 10%');
+  assert.equal(s.view,'result');assert.equal(scoreState(s),5);assert.equal(resultForScore(scoreState(s)).title,'서울대 상위 1%');
 });
 test('every requested score band maps correctly',()=>{
-  assert.deepEqual([0,1,2,3,4,5].map(n=>resultForScore(n).title),['서울대...?','서울대...?','서울대 하위 10%','서울대 하위 10%','서울대생 평균','서울대 상위 10%']);
+  assert.deepEqual([0,1,2,3,4,5].map(n=>resultForScore(n).title),['서울대...?','서울대 하위 1%','서울대 하위 10%','서울대 평균','서울대 상위 25%','서울대 상위 1%']);
 });
 test('resume preserves submitted answers and current question',()=>{
   let s=submitAnswer({...createState(),view:'quiz'},'1');s=advanceQuestion(s);
