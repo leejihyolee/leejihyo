@@ -1,0 +1,10 @@
+{
+  "name": "snu-common-sense-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/quiz.test.mjs tests/build.test.mjs"
+  }
+}
