@@ -22,4 +22,6 @@ test('export replaces preview metadata and the share button URL, and carries all
   assert.match(app,/SHARE_URL = 'https:\/\/quiz-build-test\.invalid\/'/);
   assert.doesNotMatch(html+app,/chatgpt|__SITE_ORIGIN__/i);
   for(const asset of ['goldenbell-poster.jpg','share-preview.jpg','event-card-1.png','event-card-2.png','event-card-3.png','exam-fallback.woff']) assert.ok((await stat(path.join(output,'assets',asset))).size>0);
+  assert.ok((await stat(path.join(output,'end-pages.mjs'))).size>0);
+  assert.match(app,/from '\.\/end-pages\.mjs'/);
 });
