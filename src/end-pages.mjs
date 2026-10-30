@@ -19,16 +19,16 @@ export function renderResultBody(state, {arrow='',linkIcon=''}={}) {
     <div class="result-heading-row"><h1 id="view-heading" tabindex="-1">성적통지표</h1><span class="result-stamp" aria-hidden="true">${rank.stamp}</span></div>
     <div class="score-box"><div class="score-main"><span class="score-label">총점</span><strong>${score*20}</strong><span class="score-total">/ 100</span></div><div class="score-count"><b>${score}</b> / 5문제 정답</div></div>
     <div class="rank-box"><p>당신의 상식 등급은</p><h2>${rank.title}</h2><p class="rank-comment">${rank.comment}</p><small>※ 실제 서울대생 성적 분포와 무관한 재미용 등급입니다.</small></div>
-    <section class="result-invitation" aria-label="자연대 골든벨 참가 안내">
-      <span class="result-invitation-label">혼자 푸는 건 여기까지!</span>
-      <h2>이제, 옆 사람과<br class="result-cta-break"> 골든벨에 도전해 볼래요?</h2>
-      <p>서로 다른 과 3명이 한 팀으로.<br>팀원이 없어도 개인 신청 가능!</p>
-      <button class="gold-button result-event-button" data-action="invite">${bell}<span>골든벨 참가하러 가기</span>${arrow}</button>
-      <span class="result-event-caption">11.18 (수) · 자연과학대학 28동</span>
+    <section class="result-invitation" aria-label="내 상식 수준 더 알아보기">
+      <span class="result-invitation-label">상식 점검, 여기서 끝?</span>
+      <h2>다섯 문제로는<br class="result-cta-break"> 조금 아쉽지 않나요?</h2>
+      <p>아는 줄 알았던 것도, 처음 알게 된 것도.<br>내 상식은 어디까지 통할까요?</p>
+      <button class="gold-button result-event-button" data-action="invite"><span>내 상식 수준 더 알아보러 가기</span>${arrow}</button>
+      <span class="result-event-caption">다음 도전이 궁금하다면</span>
     </section>
     ${answerReview(state)}
     <div class="result-secondary-actions"><button class="button secondary" data-action="share">${linkIcon}<span>친구에게 도전장 보내기</span></button><button class="text-button" data-action="restart">다시 풀어 보기 <span aria-hidden="true">↻</span></button></div>
-    <aside class="conversion-dock result-conversion-dock" aria-label="골든벨 참가 안내로 이동"><div class="dock-copy"><strong>이 실력, 골든벨에서도!</strong><span>팀 없이도 개인 신청 가능</span></div><button class="gold-button" data-action="invite"><span>골든벨 참가하러 가기</span>${arrow}</button></aside>
+    <aside class="conversion-dock result-conversion-dock" aria-label="내 상식 수준 더 알아보기"><div class="dock-copy"><strong>내 상식은 어디까지 통할까?</strong><span>다음 도전이 기다리고 있어요</span></div><button class="gold-button" data-action="invite"><span>내 상식 수준 더 알아보러 가기</span>${arrow}</button></aside>
   </section>`;
 }
 

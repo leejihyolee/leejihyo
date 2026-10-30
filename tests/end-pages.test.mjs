@@ -11,12 +11,14 @@ function completedState(score) {
   })};
 }
 
-test('every score leads to a prominent event CTA before optional answer review',()=>{
+test('every score has a prominent curiosity CTA without revealing the event',()=>{
   const expected=['서울대...?','서울대 하위 1%','서울대 하위 10%','서울대 평균','서울대 상위 25%','서울대 상위 1%'];
   for(let score=0;score<=5;score++){
     const html=renderResultBody(completedState(score));
     assert.ok(html.includes(`<h2>${expected[score]}</h2>`));
-    assert.ok(html.indexOf('골든벨 참가하러 가기')<html.indexOf('정답과 해설 다시 보기'));
+    assert.ok(html.indexOf('내 상식 수준 더 알아보러 가기')<html.indexOf('정답과 해설 다시 보기'));
+    assert.equal([...html.matchAll(/내 상식 수준 더 알아보러 가기/g)].length,2);
+    assert.doesNotMatch(html,/골든벨|참가|신청|11\.18|28동|<svg/);
     assert.match(html,/<details class="result-review">/);
     assert.doesNotMatch(html,/<details class="result-review"[^>]*\bopen\b/);
     assert.equal([...html.matchAll(/data-action="invite"/g)].length,2);
